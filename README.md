@@ -16,7 +16,7 @@ A lightweight, high-performance application to create and share text pastes with
 1. **Clone the repository:**
 
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/s-mahali/pastebinlite.git
    cd pastebin-lite
    ```
 
@@ -28,11 +28,11 @@ A lightweight, high-performance application to create and share text pastes with
 
 3. **Environment Variables:**
 
-   Create a `.env.local` file in the root directory and add your database connection string and the test mode flag:
+   Create a `.env` file in the root directory and add your database connection string and the test mode flag:
 
    ```env
    DATABASE_URL=postgresql://user:password@hostname/neondb?sslmode=require
-   TEST_MODE=1
+   TEST_MODE=1 
    ```
 
 4. **Database Schema:**
@@ -40,7 +40,8 @@ A lightweight, high-performance application to create and share text pastes with
    Push the schema to your Neon database:
 
    ```bash
-   bunx drizzle-kit push
+   bunx drizzle-kit push or npx drizzle-kit push
+
    ```
 
 5. **Run the development server:**

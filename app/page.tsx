@@ -47,14 +47,14 @@ export default function Home() {
   return (
     <main className="max-w-2xl mx-auto p-6 space-y-8">
       <header>
-        <h1 className="text-3xl font-bold">Pastebin Lite</h1>
-        <p className="text-slate-500">Create a paste and share it instantly</p>
+        <h1 className="text-3xl text-grey-600 font-bold uppercase tracking-tighter">Pastebin Lite</h1>
+        <p className="text-grey-500 text-xl tracking-wide">Create a paste and share it instantly</p>
       </header>
 
 {/* result section */}
       {result && (
-        <div className="p-4 bg-green-200 border-green-200 rouded-lg text-green-800">
-          <p className="font-semibold">Paste Created!</p>
+        <div className="p-4 bg-green-200 border-green-200 rouded-lg text-green-800 rounded-lg">
+          <p className="font-semibold tracking-tighter">Paste Created!</p>
           <div className="mt-2 flex items-center gap-2">
             <input
               readOnly
@@ -63,7 +63,7 @@ export default function Home() {
             />
             <button
               onClick={() => navigator.clipboard.writeText(result.url)}
-              className="px-3 py-2 bg-green-600 text-white rounded text-sm hover:bg-green-700"
+              className="px-3 py-2 bg-green-600 text-white rounded text-xs hover:bg-green-700"
             >
               Copy
             </button>
@@ -84,7 +84,7 @@ export default function Home() {
           <label className="block text-sm font-medium mb-1">Content (Required)</label>
           <textarea
             required
-            className="w-full h-48 p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+            className="w-full h-48 p-3 border rounded-lg focus:ring-1  outline-0 focus:ring-amber-200"
             placeholder="Paste your text here..."
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -119,7 +119,7 @@ export default function Home() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-blue-300"
+          className="w-full py-3 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 disabled:bg-amber-300 cursor-pointer"
         >
           {loading ? "Creating..." : "Create Paste"}
         </button>
